@@ -133,9 +133,6 @@ ro.config.alarm_vol_steps=15
 ro.config.system_vol_steps=15
 ro.config.ring_notification_vol_steps=15
 
-# OMX
-mtk.vdec.waitkeyframeforplay=1
-
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
@@ -173,19 +170,16 @@ ro.mtk_perf_simple_start_win=1
 ro.mtk_perf_fast_start_win=1
 ro.mtk_perf_response_time=1
 
-# Dirac
-persist.dirac.acs.controller=afm
-persist.dirac.acs.startAtBoot=3
-persist.dirac.afm.mode=global
-persist.dirac.path=/vendor/etc/dirac/17061
-ro.dirac.acs.storeSettings=1
-ro.dirac.config=192
-ro.dirac.max_active.headset=5
-ro.dirac.max_active.powersound=3
-ro.dirac.poolsize=2
-dirac.path=/vendor/etc/dirac/17065
-
 # Misc
 ro.mtk_cam_stereo_camera_support=1
 ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
 ro.build.keystore.path=/sdcard/.lii/
+
+# Video Acceleration Enabled And HW debugging
+video.accelerate.hw=1
+debug.sf.hw=1
+debug.performance.tuning=1
+debug.egl.profiler=1 
+debug.egl.hw=1
+debug.composition.type=gpu 
+

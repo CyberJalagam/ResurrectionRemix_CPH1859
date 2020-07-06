@@ -1,3 +1,14 @@
+    service charger /charger
+    class charger
+    group system shell input graphics
+    seclabel u:r:charger:s0
+
+ on early-init
+
+    on charger && property:ro.hardware=mt*
+    write /sys/class/leds/lcd-backlight/trigger "backlight"
+    write /sys/class/android_usb/android0/enable 1
+
 on init
     # Force disable all VoLTE support -- it requires intensive modification of frameworks
     # without framework support it creates all sorts of problems. Disable it.
@@ -8,7 +19,7 @@ on init
     mount none /system/lib64/libmtk-ril.so /vendor/lib64/libmtk-ril.so bind
 
 on post-fs
-	mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
+    mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
 
 on boot
 
@@ -18,14 +29,29 @@ on boot
     write /proc/touchpanel/double_tap_enable 1
 
     # Disable edge limit control interface
+    chown system system /proc/touchpanel/oppo_tp_limit_enable
+    chown 0660 /proc/touchpanel/oppo_tp_limit_enable
     write /proc/touchpanel/oppo_tp_limit_enable 0
 
     # Enable oppo touchpanel direction
+    chown system system /proc/touchpanel/oppo_tp_direction
+    chown 0660 /proc/touchpanel/oppo_tp_direction
     write /proc/touchpanel/oppo_tp_direction 1
 
     # Update touchscreen firmware
+    chown system system /proc/touchpanel/tp_fw_update
+    chown 0660 /proc/touchpanel/tp_fw_update
     write /proc/touchpanel/tp_fw_update 1
     
     # OTG
     write /sys/devices/platform/odm/odm:oppo_charger/power_supply/usb/otg_switch 1
 
+service set_zram /vendor/bin/sh /system/etc/init/set_zram.sh
+    class late_start
+    disabled
+    user root
+    group system
+    oneshot
+
+on property:sys.boot_completed=1
+    start set_zram

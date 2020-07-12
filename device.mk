@@ -61,7 +61,8 @@ PRODUCT_PACKAGES += \
     fstab.mt6771 \
     init.target.rc \
     init.recovery.mt6771.rc \
-    init.recovery.usb.rc
+    init.recovery.usb.rc \
+    set_zram.sh
 
 # DRM
 PRODUCT_PACKAGES += \

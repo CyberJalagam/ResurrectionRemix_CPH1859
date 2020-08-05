@@ -28,8 +28,6 @@ $(call inherit-product, device/oppo/CPH1859/device.mk)
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Bootanimation
 TARGET_SCREEN_WIDTH := 1080

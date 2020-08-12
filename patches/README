@@ -1,0 +1,17 @@
+2 patches (in skia and base) taken from AOSPA Gerrit: https://gerrit.aospa.co/c/AOSPA/android_frameworks_base/+/9781.
+1 patch is taken from https://github.com/phhusson/platform_system_netd/blob/android-vts-8.0_r4-phh/server/TetherController.cpp.
+
+
+Thanks to AOSPA Team, phhusson and GSI Community.
+
+
+
+cd root_directory_of_rom_src
+
+# Apply patches
+
+sh device/oppo/CPH1859/patches/install.sh
+
+# Uninstall patches
+
+sh device/oppo/CPH1859/patches/uninstall.sh

@@ -75,9 +75,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
-# Camera
+# GCamGo
 PRODUCT_PACKAGES += \
-    Snap
+    GCam
 
 # HIDL
 PRODUCT_PACKAGES += \

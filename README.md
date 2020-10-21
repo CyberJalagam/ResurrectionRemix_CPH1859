@@ -1,29 +1,5 @@
-# LineageOS ROM
+# ResurrectionRemix
 Device Tree for Realme 1. The 3GB variant has codename CPH1861 whereas the 4/6GB variants have codename CPH1859.
-
-**Working**:
-
-1. Boots
-2. RIL(Calls,SMS,Data)
-3. Wi-Fi
-4. Bluetooth
-5. Camera
-6. Audio
-7. Sensors
-8. Flash
-9. Brightness
-10. GPS
-11. Gcam (you need to flash Gapps for it)
-12. Hotspot
-13. USB Tethering
-14. DT2W
-
-**Not working**:
-
-1. Selinux is permissive.
-2. Video codec issues in all Chromium based browser (minimal).
-3. VoLTE
-4. No face Unlock.
 
 ### Spec Sheet
 Feature | Specification
